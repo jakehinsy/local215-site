@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Header from "./components/Header";
 
 const STORE_URL = "https://milw-firefighter-charitable-foundation.square.site/";
 
@@ -17,66 +18,6 @@ export default function Home() {
       </main>
       <Footer />
     </div>
-  );
-}
-
-/* ─────────────────────────────────────────────
-   HEADER
-───────────────────────────────────────────── */
-function Header() {
-  return (
-    <header className="sticky top-0 z-50 bg-black border-b border-brand-red">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-18">
-
-          {/* Logo + title lockup */}
-          <a
-            href="#"
-            className="flex items-center gap-3"
-            aria-label="Milwaukee Professional Firefighters Association — home"
-          >
-            <Image
-              src="/logo.png"
-              alt="IAFF Local 215 logo"
-              width={300}
-              height={300}
-              className="h-9 w-9 sm:h-10 sm:w-10 object-contain"
-              priority
-            />
-            <div className="flex flex-col leading-tight">
-              <span className="text-white font-bold text-sm sm:text-base tracking-wide uppercase leading-snug">
-                Milwaukee Professional Firefighters
-              </span>
-              <span className="text-brand-gold text-xs font-semibold tracking-widest uppercase">
-                IAFF Local 215
-              </span>
-            </div>
-          </a>
-
-          {/* Nav */}
-          <nav aria-label="Main navigation">
-            <ul className="flex items-center gap-1 sm:gap-2">
-              {[
-                { label: "About",     href: "#about"     },
-                { label: "Community", href: "#community" },
-                { label: "Store",     href: "#store"     },
-                { label: "Contact",   href: "#contact"   },
-              ].map(({ label, href }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    className="px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded transition-colors"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-        </div>
-      </div>
-    </header>
   );
 }
 
