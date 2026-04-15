@@ -4,7 +4,12 @@
       "Bash(npm run *)",
       "Bash(curl -s http://localhost:3000)",
       "Bash(python3 -c ' *)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(mv hero.jpg.jpg hero.jpg)",
+      "Bash(mv community.jpg.jpg community.jpg)",
+      "Bash(mv apparatus.jpg.jpg apparatus.jpg)",
+      "Bash(mv alt.jpg.jpg alt.jpg)",
+      "Bash(node *)"
     ]
   }
 }

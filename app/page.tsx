@@ -9,7 +9,9 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
+        <ApparatusSection />
         <CommunitySection />
+        <AltSection />
         <StoreSection />
         <ContactSection />
       </main>
@@ -28,7 +30,11 @@ function Header() {
         <div className="flex items-center justify-between h-16 sm:h-18">
 
           {/* Logo + title lockup */}
-          <a href="#" className="flex items-center gap-3" aria-label="Milwaukee Professional Firefighters Association — home">
+          <a
+            href="#"
+            className="flex items-center gap-3"
+            aria-label="Milwaukee Professional Firefighters Association — home"
+          >
             <Image
               src="/logo.png"
               alt="IAFF Local 215 logo"
@@ -80,59 +86,58 @@ function Header() {
 function HeroSection() {
   return (
     <section
-      className="relative bg-black text-white"
+      className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[800px] flex items-center text-white overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Radial red glow */}
+      {/* Background photo */}
+      <Image
+        src="/hero.jpg"
+        alt="Milwaukee firefighters on duty"
+        fill
+        className="object-cover object-center"
+        priority
+        sizes="100vw"
+      />
+
+      {/* Dark overlay — slightly heavier for text contrast */}
+      <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
+      {/* Centered red glow */}
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(139,0,0,0.45),transparent)] pointer-events-none"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(139,0,0,0.28),transparent)]"
         aria-hidden="true"
       />
+
       {/* Gold top rule */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-brand-gold" aria-hidden="true" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+      {/* Content */}
+      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+        <div className="flex flex-col items-center text-center max-w-xl mx-auto">
 
-          {/* Logo */}
-          <div className="mb-7 p-4 rounded-full bg-white/5 border border-white/10 ring-1 ring-brand-gold/20">
-            <Image
-              src="/logo.png"
-              alt="IAFF Local 215 — Milwaukee Professional Firefighters Association"
-              width={300}
-              height={300}
-              className="h-24 w-24 sm:h-28 sm:w-28 object-contain"
-              priority
-            />
-          </div>
-
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/40 text-brand-gold text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-6">
-            Serving Milwaukee Since 1918
-          </div>
+          {/* Label */}
+          <p className="text-brand-gold text-xs font-bold tracking-widest uppercase mb-5">
+            IAFF Local 215
+          </p>
 
           <h1
             id="hero-heading"
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-none tracking-tight drop-shadow-lg"
           >
-            Serving and Protecting{" "}
-            <span className="text-brand-red">Milwaukee</span>
+            Serving Milwaukee
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl text-zinc-300 max-w-2xl leading-relaxed">
-            Milwaukee Professional Firefighters Association — IAFF Local 215 —
-            represents the dedicated men and women who run toward danger so our
-            city stays safe. Rooted in Milwaukee. Committed to our communities.
-            On duty around the clock.
+          <p className="mt-6 text-base sm:text-lg text-zinc-200 leading-relaxed drop-shadow max-w-sm sm:max-w-none">
+            Milwaukee Professional Firefighters Association — IAFF Local 215
+            represents the firefighters who protect and serve Milwaukee every day.
           </p>
 
           {/* CTA buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
             <a
               href={STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3.5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold rounded-lg transition-colors text-sm sm:text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold rounded-lg transition-colors text-sm sm:text-base shadow-lg"
             >
               Shop the Store
             </a>
@@ -140,13 +145,13 @@ function HeroSection() {
               href={STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3.5 bg-brand-gold hover:bg-brand-gold-light text-black font-semibold rounded-lg transition-colors text-sm sm:text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base shadow-lg border border-zinc-700"
             >
               Support the Foundation
             </a>
             <a
               href="#about"
-              className="inline-flex items-center justify-center px-6 py-3.5 border border-white/30 hover:border-white/60 hover:bg-white/10 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 border border-white/50 hover:border-white hover:bg-white/10 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base"
             >
               Learn More
             </a>
@@ -205,18 +210,72 @@ function AboutSection() {
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-zinc-200">
           {[
             { stat: "100+", label: "Years Serving Milwaukee" },
-            { stat: "IAFF", label: "International Affiliate" },
-            { stat: "24 / 7", label: "Always On Duty" },
+            { stat: "IAFF", label: "International Affiliate"  },
+            { stat: "24 / 7", label: "Always On Duty"         },
           ].map(({ stat, label }) => (
             <div key={label}>
-              <p className="text-3xl sm:text-4xl font-extrabold text-brand-red">
-                {stat}
-              </p>
-              <p className="mt-1 text-sm sm:text-base text-zinc-500 font-medium">
-                {label}
-              </p>
+              <p className="text-3xl sm:text-4xl font-extrabold text-brand-red">{stat}</p>
+              <p className="mt-1 text-sm sm:text-base text-zinc-500 font-medium">{label}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   APPARATUS  (side-by-side on desktop)
+───────────────────────────────────────────── */
+function ApparatusSection() {
+  return (
+    <section className="bg-zinc-950 text-white overflow-hidden" aria-labelledby="apparatus-heading">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-0">
+        <div className="flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-16">
+
+          {/* Photo — full bleed edge on desktop */}
+          <div className="relative w-full lg:w-1/2 h-64 sm:h-80 lg:h-auto lg:min-h-[520px] rounded-xl lg:rounded-none overflow-hidden flex-shrink-0
+                          lg:-ml-4 lg:pl-0">
+            <Image
+              src="/apparatus.jpg"
+              alt="Milwaukee fire apparatus and crew"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            {/* subtle vignette toward the text side */}
+            <div
+              className="absolute inset-0 hidden lg:block bg-gradient-to-r from-transparent via-transparent to-zinc-950/60"
+              aria-hidden="true"
+            />
+          </div>
+
+          {/* Text */}
+          <div className="flex flex-col justify-center lg:w-1/2 lg:py-20">
+            <p className="text-brand-gold text-xs font-bold tracking-widest uppercase mb-3">
+              Apparatus & Operations
+            </p>
+            <h2
+              id="apparatus-heading"
+              className="text-3xl sm:text-4xl font-extrabold leading-tight mb-5"
+            >
+              First-In, Every Time
+            </h2>
+            <div className="space-y-4 text-zinc-400 text-base sm:text-lg leading-relaxed">
+              <p>
+                Milwaukee's firefighters respond to thousands of calls each year
+                — structure fires, medical emergencies, hazardous conditions, and
+                more. Our members train relentlessly to be ready for whatever the
+                city demands.
+              </p>
+              <p>
+                Local 215 advocates for modern, well-maintained apparatus and
+                equipment so our crews can do their jobs safely and effectively.
+                When the tones drop, Milwaukee's best are ready.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -252,33 +311,95 @@ function CommunitySection() {
       aria-labelledby="community-heading"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/*
+          flex-col-reverse: on mobile the image div (second in DOM) floats to the top,
+          text div (first in DOM) sits below. On desktop: normal left-right row.
+        */}
+        <div className="flex flex-col-reverse lg:flex-row lg:items-start gap-10 lg:gap-16">
 
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-brand-gold text-xs font-bold tracking-widest uppercase mb-3">
-            Community
-          </p>
-          <h2
-            id="community-heading"
-            className="text-3xl sm:text-4xl font-extrabold leading-tight"
-          >
-            More Than a Union —{" "}
-            <span className="text-brand-red">Part of the City</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {cards.map(({ icon, title, body }) => (
-            <div
-              key={title}
-              className="bg-zinc-900 border border-zinc-800 hover:border-brand-red/50 rounded-xl p-6 transition-colors"
+          {/* ── Text column ── */}
+          <div className="flex-1 min-w-0">
+            <p className="text-brand-gold text-xs font-bold tracking-widest uppercase mb-3">
+              Community
+            </p>
+            <h2
+              id="community-heading"
+              className="text-3xl sm:text-4xl font-extrabold leading-tight mb-8"
             >
-              <span className="text-3xl mb-4 block" aria-hidden="true">{icon}</span>
-              <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">{body}</p>
-            </div>
-          ))}
-        </div>
+              More Than a Union —{" "}
+              <span className="text-brand-red">Part of the City</span>
+            </h2>
 
+            <div className="grid grid-cols-1 sm:grid-cols-1 gap-5">
+              {cards.map(({ icon, title, body }) => (
+                <div
+                  key={title}
+                  className="bg-zinc-900 border border-zinc-800 hover:border-brand-red/50 rounded-xl p-6 transition-colors"
+                >
+                  <span className="text-2xl mb-3 block" aria-hidden="true">{icon}</span>
+                  <h3 className="text-base font-bold text-white mb-1.5">{title}</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Image column ── */}
+          <div className="flex-shrink-0 flex justify-center lg:justify-end">
+            <div className="w-full max-w-[300px] sm:max-w-[340px] lg:w-[300px]">
+              <Image
+                src="/community.jpg"
+                alt="Milwaukee firefighter assisting a community member"
+                width={2613}
+                height={3920}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                sizes="(max-width: 1024px) 340px, 300px"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   ALT  (full-bleed divider / quote section)
+───────────────────────────────────────────── */
+function AltSection() {
+  return (
+    <section
+      className="relative min-h-[320px] sm:min-h-[380px] flex items-center overflow-hidden"
+      aria-label="Milwaukee firefighters in action"
+    >
+      <Image
+        src="/alt.jpg"
+        alt="Milwaukee fire department in action"
+        fill
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-brand-red/20 via-transparent to-transparent"
+        aria-hidden="true"
+      />
+
+      {/* Quote / callout */}
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="max-w-2xl">
+          {/* Gold rule */}
+          <div className="w-12 h-1 bg-brand-gold mb-6" aria-hidden="true" />
+          <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight drop-shadow-lg">
+            "The bravest are surely those who have the clearest vision of what
+            is before them — and still go out and meet it."
+          </blockquote>
+          <p className="mt-5 text-zinc-400 text-sm sm:text-base font-medium tracking-wide uppercase">
+            Milwaukee Fire Department — IAFF Local 215
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -353,7 +474,10 @@ function ContactSection() {
 
           <div className="space-y-5">
             <div className="flex items-start gap-4">
-              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-red/10 flex items-center justify-center text-brand-red text-base" aria-hidden="true">
+              <span
+                className="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-red/10 flex items-center justify-center text-brand-red text-base"
+                aria-hidden="true"
+              >
                 ✉
               </span>
               <div>
@@ -365,7 +489,10 @@ function ContactSection() {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-red/10 flex items-center justify-center text-brand-red text-base" aria-hidden="true">
+              <span
+                className="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-red/10 flex items-center justify-center text-brand-red text-base"
+                aria-hidden="true"
+              >
                 📍
               </span>
               <div>
@@ -412,10 +539,10 @@ function Footer() {
           <nav aria-label="Footer navigation">
             <ul className="flex flex-wrap gap-4 text-sm">
               {[
-                { label: "About",     href: "#about"     },
-                { label: "Community", href: "#community" },
-                { label: "Store",     href: STORE_URL,   external: true },
-                { label: "Contact",   href: "#contact"   },
+                { label: "About",     href: "#about"    },
+                { label: "Community", href: "#community"},
+                { label: "Store",     href: STORE_URL,  external: true },
+                { label: "Contact",   href: "#contact"  },
               ].map(({ label, href, external }) => (
                 <li key={label}>
                   <a
