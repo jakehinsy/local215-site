@@ -414,14 +414,16 @@ function ContactSection() {
                 className="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-red/10 flex items-center justify-center text-brand-red text-base"
                 aria-hidden="true"
               >
-                ✉
+                📞
               </span>
               <div>
-                <p className="text-sm font-semibold text-zinc-800">General Inquiries</p>
-                <p className="text-zinc-500 text-sm mt-0.5">
-                  contact@local215.org{" "}
-                  <span className="text-zinc-400">(placeholder)</span>
-                </p>
+                <p className="text-sm font-semibold text-zinc-800">Local 215 Office</p>
+                <a
+                  href="tel:14142598000"
+                  className="text-zinc-500 text-sm mt-0.5 hover:text-zinc-800 transition-colors"
+                >
+                  (414) 259-8000
+                </a>
               </div>
             </div>
             <div className="flex items-start gap-4">
