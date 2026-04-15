@@ -99,11 +99,11 @@ function HeroSection() {
         sizes="100vw"
       />
 
-      {/* Dark overlay — slightly heavier for text contrast */}
-      <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
       {/* Centered red glow */}
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(139,0,0,0.28),transparent)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(139,0,0,0.18),transparent)]"
         aria-hidden="true"
       />
 
@@ -116,12 +116,12 @@ function HeroSection() {
 
           <h1
             id="hero-heading"
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-none tracking-tight drop-shadow-lg"
+            className="text-5xl sm:text-6xl lg:text-6xl font-extrabold leading-none tracking-tight drop-shadow-lg"
           >
             Serving Milwaukee
           </h1>
 
-          <p className="mt-8 text-base sm:text-lg text-zinc-200 leading-relaxed drop-shadow">
+          <p className="mt-8 text-base sm:text-lg text-zinc-200 leading-relaxed drop-shadow max-w-lg">
             Milwaukee Professional Firefighters Association — IAFF Local 215
             represents the firefighters who protect and serve Milwaukee every day.
           </p>
