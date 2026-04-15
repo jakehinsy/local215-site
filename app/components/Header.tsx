@@ -35,10 +35,13 @@ export default function Header() {
               className="h-9 w-9 sm:h-10 sm:w-10 object-contain flex-shrink-0"
               priority
             />
-            {/* Mobile: short name */}
+            {/* Mobile: compact two-line identity */}
             <div className="flex flex-col leading-tight md:hidden">
               <span className="text-brand-gold text-sm font-bold tracking-widest uppercase">
                 Local 215
+              </span>
+              <span className="text-zinc-300 text-xs font-medium tracking-wide">
+                Milwaukee Firefighters
               </span>
             </div>
             {/* Desktop: full name */}
