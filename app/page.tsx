@@ -111,13 +111,8 @@ function HeroSection() {
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-brand-gold" aria-hidden="true" />
 
       {/* Content */}
-      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
-        <div className="flex flex-col items-center text-center max-w-xl mx-auto">
-
-          {/* Label */}
-          <p className="text-brand-gold text-xs font-bold tracking-widest uppercase mb-5">
-            IAFF Local 215
-          </p>
+      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-36">
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
 
           <h1
             id="hero-heading"
@@ -126,18 +121,18 @@ function HeroSection() {
             Serving Milwaukee
           </h1>
 
-          <p className="mt-6 text-base sm:text-lg text-zinc-200 leading-relaxed drop-shadow max-w-sm sm:max-w-none">
+          <p className="mt-8 text-base sm:text-lg text-zinc-200 leading-relaxed drop-shadow">
             Milwaukee Professional Firefighters Association — IAFF Local 215
             represents the firefighters who protect and serve Milwaukee every day.
           </p>
 
           {/* CTA buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+          <div className="mt-12 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
               href={STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold rounded-lg transition-colors text-sm sm:text-base shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-brand-red hover:bg-brand-red-dark border border-brand-red hover:border-brand-red-dark text-white font-semibold rounded-lg transition-colors text-sm sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-red"
             >
               Shop the Store
             </a>
@@ -145,13 +140,13 @@ function HeroSection() {
               href={STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base shadow-lg border border-zinc-700"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white/50 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             >
               Support the Foundation
             </a>
             <a
               href="#about"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 border border-white/50 hover:border-white hover:bg-white/10 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 border border-white/50 hover:border-white hover:bg-white/10 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             >
               Learn More
             </a>
