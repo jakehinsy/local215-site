@@ -37,19 +37,19 @@ export default function Header() {
             />
             {/* Mobile: compact two-line identity */}
             <div className="flex flex-col leading-tight md:hidden">
-              <span className="text-brand-gold text-sm font-bold tracking-widest uppercase">
-                Local 215
+              <span className="text-brand-gold text-sm font-bold tracking-[0.15em] uppercase">
+                MPFA
               </span>
-              <span className="text-zinc-300 text-xs font-medium tracking-wide">
-                Milwaukee Firefighters
+              <span className="text-zinc-300 text-[10px] font-medium tracking-wide">
+                IAFF Local 215
               </span>
             </div>
             {/* Desktop: full name */}
             <div className="hidden md:flex flex-col leading-tight">
-              <span className="text-white font-bold text-sm lg:text-base tracking-wide uppercase leading-snug">
-                Milwaukee Professional Firefighters
+              <span className="text-white font-bold text-lg lg:text-xl tracking-[0.15em] uppercase leading-none">
+                MPFA
               </span>
-              <span className="text-brand-gold text-xs font-semibold tracking-widest uppercase">
+              <span className="text-brand-gold text-xs font-semibold tracking-[0.15em] uppercase mt-0.5">
                 IAFF Local 215
               </span>
             </div>
