@@ -116,42 +116,42 @@ function AboutSection() {
           </p>
           <h2
             id="about-heading"
-            className="text-3xl sm:text-4xl font-extrabold text-black leading-tight mb-6"
+            className="text-3xl sm:text-4xl font-extrabold text-black leading-tight mb-8"
           >
-            Milwaukee's Firefighters — Professional, Proud, Present
+            Professional Firefighters — A Legacy of Service
           </h2>
-          <div className="space-y-4 text-zinc-600 text-base sm:text-lg leading-relaxed">
+          <div className="space-y-6 text-zinc-600 text-base sm:text-lg leading-relaxed">
             <p>
               The Milwaukee Professional Firefighters Association, IAFF Local
-              215, has represented Milwaukee's firefighters for over a century.
-              Our members serve every corner of this city — from the lakefront to
-              the neighborhoods — ready around the clock.
+              215, has represented the city's firefighters for more than a
+              century. Our members serve every corner of Milwaukee — from the
+              lakefront to the neighborhoods — ready around the clock.
             </p>
             <p>
-              We are affiliated with the International Association of Fire
-              Fighters, the unified voice of professional firefighters across
-              North America. Our union fights for safe working conditions, modern
-              equipment, and adequate staffing — because protecting firefighters
-              means protecting Milwaukee.
+              Affiliated with the International Association of Fire Fighters, we
+              serve as the unified voice for professional firefighters across
+              North America. Our union advocates for the safe working conditions,
+              modern equipment, and adequate staffing necessary to protect both
+              our members and the citizens of Milwaukee.
             </p>
             <p>
-              Beyond the firehouse, Local 215 is deeply active in the community:
-              supporting local charities, partnering with neighborhood
-              organizations, and showing up for the city we call home.
+              Beyond the firehouse, Local 215 maintains a deep-rooted presence
+              in the community, supporting local charities and partnering with
+              organizations to strengthen the city we call home.
             </p>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-zinc-200">
+        <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-8 pt-12 border-t border-zinc-200">
           {[
-            { stat: "100+", label: "Years Serving Milwaukee" },
+            { stat: "1919", label: "Founded" },
             { stat: "IAFF", label: "International Affiliate"  },
             { stat: "24 / 7", label: "Always On Duty"         },
           ].map(({ stat, label }) => (
             <div key={label}>
-              <p className="text-3xl sm:text-4xl font-extrabold text-brand-red">{stat}</p>
-              <p className="mt-1 text-sm sm:text-base text-zinc-500 font-medium">{label}</p>
+              <p className="text-3xl sm:text-4xl font-extrabold text-brand-red tracking-tight">{stat}</p>
+              <p className="mt-2 text-xs sm:text-sm text-zinc-500 font-bold uppercase tracking-wider">{label}</p>
             </div>
           ))}
         </div>
