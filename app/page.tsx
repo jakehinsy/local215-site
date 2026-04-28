@@ -53,13 +53,13 @@ function HeroSection() {
 
       {/* Content */}
       <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-36">
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
 
           <h1
             id="hero-heading"
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight drop-shadow-lg"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight drop-shadow-lg"
           >
-            Milwaukee Professional <br className="hidden sm:block" />
+            Milwaukee Professional <br />
             Firefighters Association
           </h1>
 
