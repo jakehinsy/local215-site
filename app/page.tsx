@@ -463,10 +463,10 @@ function Footer() {
               className="h-8 w-8 object-contain opacity-90"
             />
             <div>
-              <p className="text-white font-bold text-sm tracking-wide uppercase leading-snug">
-                Milwaukee Professional Firefighters Association
+              <p className="text-white font-bold text-lg tracking-[0.15em] uppercase leading-none">
+                MPFA
               </p>
-              <p className="text-brand-gold text-xs font-semibold tracking-widest uppercase mt-0.5">
+              <p className="text-brand-gold text-[10px] font-semibold tracking-widest uppercase mt-1">
                 IAFF Local 215
               </p>
             </div>
@@ -497,7 +497,7 @@ function Footer() {
 
         <div className="mt-8 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-zinc-600">
           <p>
-            &copy; {new Date().getFullYear()} Milwaukee Professional Firefighters Association, IAFF Local 215.
+            &copy; {new Date().getFullYear()} MPFA (IAFF Local 215).
             All rights reserved.
           </p>
           <a
@@ -506,7 +506,7 @@ function Footer() {
             rel="noopener noreferrer"
             className="hover:text-zinc-400 transition-colors"
           >
-            Shop the Foundation Store →
+            Support Our Foundation →
           </a>
         </div>
 
