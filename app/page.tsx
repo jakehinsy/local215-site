@@ -247,14 +247,10 @@ function CommunitySection() {
       aria-labelledby="community-heading"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/*
-          flex-col-reverse: on mobile the image div (second in DOM) floats to the top,
-          text div (first in DOM) sits below. On desktop: normal left-right row.
-        */}
-        <div className="flex flex-col-reverse lg:flex-row lg:items-start gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr,300px] gap-y-10 lg:gap-y-0 lg:gap-x-12 items-start">
 
-          {/* ── Text column ── */}
-          <div className="flex-1 min-w-0">
+          {/* ── Headline Column ── */}
+          <div className="order-2 lg:order-1 lg:col-start-1 lg:row-start-1 min-w-0">
             <p className="text-brand-gold text-xs font-bold tracking-widest uppercase mb-3">
               Community
             </p>
@@ -265,8 +261,25 @@ function CommunitySection() {
               More Than a Union —{" "}
               <span className="text-brand-red">Part of the City</span>
             </h2>
+          </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-1 gap-5">
+          {/* ── Image Column ── */}
+          <div className="order-1 lg:order-2 lg:col-start-2 lg:row-start-2 lg:self-center flex justify-center lg:justify-end">
+            <div className="w-full max-w-[300px] sm:max-w-[340px] lg:w-[300px]">
+              <Image
+                src="/community.jpg"
+                alt="Milwaukee firefighter assisting a community member"
+                width={2613}
+                height={3920}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                sizes="(max-width: 1024px) 340px, 300px"
+              />
+            </div>
+          </div>
+
+          {/* ── Cards Column ── */}
+          <div className="order-3 lg:order-3 lg:col-start-1 lg:row-start-2 min-w-0">
+            <div className="grid grid-cols-1 gap-5">
               {cards.map(({ icon, title, body }) => (
                 <div
                   key={title}
@@ -277,20 +290,6 @@ function CommunitySection() {
                   <p className="text-zinc-400 text-sm leading-relaxed">{body}</p>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* ── Image column ── */}
-          <div className="flex-shrink-0 flex justify-center lg:justify-end lg:self-center">
-            <div className="w-full max-w-[300px] sm:max-w-[340px] lg:w-[300px]">
-              <Image
-                src="/community.jpg"
-                alt="Milwaukee firefighter assisting a community member"
-                width={2613}
-                height={3920}
-                className="w-full h-auto rounded-2xl shadow-2xl"
-                sizes="(max-width: 1024px) 340px, 300px"
-              />
             </div>
           </div>
 
