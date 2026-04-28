@@ -281,7 +281,7 @@ function CommunitySection() {
           </div>
 
           {/* ── Image column ── */}
-          <div className="flex-shrink-0 flex justify-center lg:justify-end">
+          <div className="flex-shrink-0 flex justify-center lg:justify-end lg:self-center">
             <div className="w-full max-w-[300px] sm:max-w-[340px] lg:w-[300px]">
               <Image
                 src="/community.jpg"
